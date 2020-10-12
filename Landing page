@@ -1,0 +1,89 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- General -->
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Responsive Landing Page UI Design for a Nutrition Page</title>
+	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+	<!-- Loading Necessary Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@500;600;700;900&family=Roboto:wght@500;600;700;900&display=swap" rel="stylesheet">
+</head>
+<style>
+	/* General Css */
+	html{width: 100vw;height: 100vh;overflow: hidden;font-family:"Roboto", sans-serif;color: #363636;background-color: #fff;}
+	body{margin: 0}
+	a{text-decoration: none;color: #363636}
+	.center {margin: 0; position: absolute; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);text-align: center;}
+	/* Css for scroll bar */
+	::-webkit-scrollbar {width: 8px;height: 8px;border-radius: 8px;}
+	::-webkit-scrollbar-button {display: none;}
+	::-webkit-scrollbar-corner, ::-webkit-scrollbar-track {background: #e1e1e1;}
+	::-webkit-scrollbar-thumb {background: #757575;border-radius: 8px;}
+
+	/* Body Css */
+	.main-body{width: 100vw;height: 100vh;background-color: #ebf1f6;display: inline-flex;}
+	.background-image{position:absolute;background-image: url('https://s7.gifyu.com/images/website-design-challenge-1.jpg');background-position: center;background-size: cover;width: 100%;height: 100vh;}
+	.nav-bar{position: absolute;width: 100%;height: 70px;display: inline-flex;z-index: 10;}
+	.nav-logo{background-color: #f3a82f;display: inline-flex;}
+	.logo-svg{padding: 24px;padding-right: 12px;}
+	.logo-text{padding: 20px;padding-left: 0;color: #fff;font-weight: 500;text-transform: uppercase;font-size: 14px;line-height: 32px;}
+	.nav-text{height: 70px;line-height: 76px;padding-left: 30px;text-transform: uppercase;font-size: 14px;font-weight: 600;cursor: pointer;}
+	.content-body{width: 50%;height: 100vh;position: relative;display: inline-block;}
+	.content{top: 55%;}
+	.title{font-family: 'Merriweather', serif;word-break: break-word;margin: 0;font-size: 56px;text-align: left;font-weight: 600;color: #1b1b1b;}
+	.sub-title{font-family: 'Open Sans', sans-serif;text-align: left;font-weight: 500;font-size: 18px;}
+	.know-more-button{background-color: #f3a82f;color: #fff;padding: 14px 28px;display: inline-block;border-radius: 4px;float: left;font-size: 14px;margin-top: 8px;cursor: pointer;}
+	.know-more-text{margin: 0;font-weight: 600;}
+	/* Play Button Css */
+	.play-btn {width: 60px;height: 60px;background: radial-gradient( rgba(0, 0, 0, 0.2) 60%, rgb(255, 255, 255) 62%);border-radius: 50%;position: relative;display: block;box-shadow: 0px 0px 25px 3px rgba(0, 0, 0, 0.8);cursor: pointer;}
+	.play-btn::after {content: "";position: absolute;left: 50%;top: 50%;-webkit-transform: translateX(-40%) translateY(-50%);transform: translateX(-40%) translateY(-50%);transform-origin: center center;width: 0;height: 0;border-top: 15px solid transparent;border-bottom: 15px solid transparent;border-left: 25px solid #fff;z-index: 100;-webkit-transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);}
+	.play-btn:before {content: "";position: absolute;width: 143%;height: 143%;-webkit-animation-delay: 0s;animation-delay: 0s;-webkit-animation: pulsate1 2s;animation: pulsate1 2s;-webkit-animation-direction: forwards;animation-direction: forwards;-webkit-animation-iteration-count: infinite;animation-iteration-count: infinite;-webkit-animation-timing-function: steps;animation-timing-function: steps;opacity: 1;border-radius: 50%;border: 5px solid rgba(255, 255, 255, .75);top: -30%;left: -30%;background: rgba(198, 16, 0, 0);}
+	@-webkit-keyframes pulsate1 {0% {-webkit-transform: scale(0.6);transform: scale(0.6);opacity: 1;box-shadow: inset 0px 0px 25px 3px rgba(255, 255, 255, 0.75), 0px 0px 25px 10px rgba(255, 255, 255, 0.75);} 100% {-webkit-transform: scale(1);transform: scale(1);opacity: 0;box-shadow: none;}}
+	@keyframes pulsate1 {0% {-webkit-transform: scale(0.6);transform: scale(0.6);opacity: 1;box-shadow: inset 0px 0px 25px 3px rgba(255, 255, 255, 0.75), 0px 0px 25px 10px rgba(255, 255, 255, 0.75);} 100% {-webkit-transform: scale(1, 1);transform: scale(1);opacity: 0;box-shadow: none;}}
+
+	/* Small to portrait devices */
+	@media only screen and (max-width: 800px){
+		.main-body{display: block;background-color: #e6ebef;}
+		.content-body{width: 100%;height: calc(100vh - 70px);margin-top: 70px;}
+		.background-image{background-image: url('https://s7.gifyu.com/images/website-design-challenge-portrait-1.jpg');background-position: center;background-size: cover;width: 100%;height: 100vh;opacity: 0.8;}
+		.content{left: 40%;top: 50%;}
+		.logo-text{display: none;}
+		.logo-svg{padding: 24px;}
+		.video{display: none;}
+	}
+</style>
+<body>
+	<!-- Page Body -->
+	<div class="main-body">
+		<!-- Background Image -->
+		<div class="background-image"></div>
+		<!-- Navbar -->
+		<div class="nav-bar">
+			<div class="nav-logo">
+				<div><svg xmlns="http://www.w3.org/2000/svg" class="logo-svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16 6v8h3v8h2V2c-2.76 0-5 2.24-5 4zm-5 3H9V2H7v7H5V2H3v7c0 2.21 1.79 4 4 4v9h2v-9c2.21 0 4-1.79 4-4V2h-2v7z" fill="#fff"/></svg></div>
+				<div class="logo-text">Healthify</div>
+			</div>
+			<span class="nav-text">Home</span>
+			<span class="nav-text">Recipes</span>
+			<span class="nav-text">Search</span>
+		</div>
+		<!-- Body Content -->
+		<div class="content-body">
+			<div class="content center">
+				<h1 class="title">Healthy<br>Living</h1>
+				<h3 class="sub-title">The foundational guide to balancing your nutritional diets and everyday lifestyle</h3>
+				<div class="know-more-button">
+					<p class="know-more-text">KNOW MORE</p>
+				</div>
+			</div>
+		</div>
+		<!-- Play Button -->
+		<div class="content-body video">
+			<div class="center play-btn"></div>
+		</div>
+	</div>
+</body>
+</html>	
